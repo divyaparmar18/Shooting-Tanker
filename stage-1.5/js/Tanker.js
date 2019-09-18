@@ -12,17 +12,15 @@ class Tanker {
     };
     display(){
       var pos = this.body.position;
-      // var angle = this.body.angle;
       if(keyIsDown(LEFT_ARROW)){
         angle -=0.05
-        // shoot.attach(canonBall.body)
       }
       if(keyIsDown(RIGHT_ARROW)){
         angle +=0.05
       }
 
       if(keyIsDown(DOWN_ARROW)){
-          Matter.Body.setPosition(canonBall.body, {x: 50 , y: height-10})
+          Matter.Body.setPosition(canonBall.body, {x: 50 , y: height-40})
       }
 
 
@@ -31,8 +29,8 @@ class Tanker {
       rotate(angle);
       rect(0,0,this.width,this.height);
       pop();
-      arc(70, height-40, 90, 100, PI , TWO_PI);
-      rect(20,height-40,100,20);
-      rect(20,height-20,100,20);
+      arc(70, height-65, 90, 100, PI , TWO_PI);
+      rect(20,height-65,100,20);
+      rect(20,height-45,100,20);
     };
 }
