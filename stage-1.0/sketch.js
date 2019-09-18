@@ -8,7 +8,7 @@ function setup(){
   createCanvas(600,500);
   engine = Engine.create();
   world = engine.world;
-  tanker = new Tanker(75,height-90,100,20)
+  tanker = new Tanker(75,height-90,60,30)
 }
 
 function draw() {
