@@ -3,7 +3,8 @@ class CanonBall {
     var options = {
       "density" :   1.5,
       "friction" : 1.0,
-      "restitution" : 0.8
+      "restitution" : 0.8,
+      "frictionAir":0.06
     }
     this.width = 25;
     this.height = 25;
@@ -14,12 +15,16 @@ class CanonBall {
   };
 
   display(){
-    var pos = this.body.position;
-    push();
-    translate(pos.x, pos.y);
-    rotate(angle);
-    imageMode(CENTER)
-    image(this.ballImage,0, 0, this.width, this.height);
-    pop();
+    if(flag === "launch"){
+      var pos = this.body.position;
+      var angle = this.body.angle
+
+      push();
+      translate(pos.x, pos.y);
+      rotate(angle);
+      imageMode(CENTER)
+      image(this.ballImage,0, 0, this.width, this.height);
+      pop();
+    }
   };
 };

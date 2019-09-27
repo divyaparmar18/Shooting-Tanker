@@ -11,6 +11,7 @@ class ShootBall{
         World.add(world, this.sling);
     }
     attach(body){
+        flag = "red"
         this.sling.bodyA = body;
     }
 
@@ -19,28 +20,17 @@ class ShootBall{
     }
 
     display(){
-        if(this.sling.bodyA){
-            var pointA = this.sling.bodyA.position;
-            var pointB = this.pointB;
-            push();
-
-            // stroke(48,22,8);
-            if(pointA.x < 220) {
-                // strokeWeight(7);
-                fill("red")
-                line(pointA.x - 20, pointA.y, pointB.x -10, pointB.y);
-                line(pointA.x - 20, pointA.y, pointB.x + 30, pointB.y - 3);
-            }
-            else{
-                // strokeWeight(3);
-                fill("red")
-
-                line(pointA.x + 25, pointA.y, pointB.x -10, pointB.y);
-                line(pointA.x + 25, pointA.y, pointB.x + 30, pointB.y - 3);
-            }
-
-            pop();
-        }
+      if(this.sling.bodyA){
+        var pointA = this.sling.bodyA.position;
+        this.pointB.x = launcherX ;
+        this.pointB.y = launcherY;
+        var pointB = this.pointB ;
+          // push();
+          // strokeWeight(3)
+          // ellipse(pointB.x,pointB.y,5,5)
+          // line(pointA.x, pointA.y, pointB.x, pointB.y)
+          // pop();
+      }
     }
 
 }

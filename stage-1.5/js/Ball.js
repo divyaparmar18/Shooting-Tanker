@@ -1,7 +1,11 @@
 class Ball {
   constructor(x,y,radius) {
     var options ={
-        restitution: 0.5
+        frictionAir: 0,
+        friction: 0,
+        frictionStatic: 1,
+        inertia: Infinity,
+        restitution: 1.0
     }
 
     this.body = Bodies.circle(x,y,radius, options);
@@ -17,8 +21,8 @@ class Ball {
     push();
     translate(pos.x, pos.y)
     rotate(angle);
-    // ellipseMode(RADIUS);
-    rect(0, 0,10,10);
+    ellipseMode(RADIUS);
+    ellipse(0, 0,this.radius,this.radius);
     pop()
   }
 }
